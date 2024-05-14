@@ -13,7 +13,6 @@ def calculate_mean(data, depth = 9):
         sums[idx] += d[1]
         counts[idx] += 1
     for n, s in enumerate(sums):
-        print(f"Mean for enum {n} is {s / counts[n]}, where sum is {s} and len is {counts[n]}")
         sums[n] = round(s / counts[n], 1)
     return sums
 
@@ -52,6 +51,7 @@ def filter_data(dataset_path, show_progress = True, items = None):
             # Increment the lines_read counter
             lines_read += 1
 
+            # Break when all wanted lines are read
             if items != None and lines_read >= items:
                 break
 
